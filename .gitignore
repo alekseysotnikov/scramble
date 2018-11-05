@@ -1,0 +1,6 @@
+figwheel_server.log
+scramble.iml
+resources/public/js/compiled
+target
+.idea
+.lein-failures

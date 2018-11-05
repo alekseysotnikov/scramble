@@ -1,0 +1,62 @@
+* {
+	box-sizing: border-box;
+	vertical-align: top;
+	text-rendering: optimizelegibility;
+}
+
+tr,
+td,
+table,
+tbody {
+	padding: 0;
+	margin: 0;
+	border-collapse: collapse;
+}
+
+body,
+input,
+button {
+	font: 16px/20px 'Input Sans Narr', 'Input Sans Narrow', sans-serif;
+}
+
+.pane {
+	border: 2px solid #ccc;
+	border-radius: 5.2px;
+	padding: 20px;
+	width: 300px;
+	display: inline-block;
+	height: 300px;
+	margin: 10px 5px;
+	line-height: 28px;
+
+}
+
+.pane-title {
+	border-bottom: 1px solid #ccc;
+	margin: -4px 0 20px;
+	line-height: 30px;
+}
+
+p  {
+  font-size: 14px;
+}
+
+dt {
+	width: 82px;
+	float: left;
+}
+
+dt,
+dd {
+	vertical-align: bottom;
+	line-height: 36px
+}
+
+input {
+	padding: 6px 6px 2px;
+	border: 1px solid #CCC;
+}
+
+input:focus {
+	outline: 3px solid #666;
+}
