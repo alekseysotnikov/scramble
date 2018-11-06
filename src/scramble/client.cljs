@@ -10,14 +10,15 @@
 
 
 (defn- fetch-text! [url handler error-handler]
-  (let [xhr (js/XMLHttpRequest.)]
+  (let [xhr                (js/XMLHttpRequest.)
+        http-state-handler #(this-as t (let [done    (== 4   (oops/oget t "readyState"))
+                                             http-ok (== 200 (oops/oget t "status"))]
+                                         (if done (if http-ok
+                                                    (handler (oops/oget xhr "responseText"))
+                                                    (error-handler t)))))]
     (doto xhr
       (oops/oset! "withCredentials" false)
-      (oops/oset! "onreadystatechange" #(this-as t (let [done    (== 4 (oops/oget t "readyState"))
-                                                         http-ok (== 200 (oops/oget t "status"))]
-                                                     (if done (if http-ok
-                                                                (handler (oops/oget xhr "responseText"))
-                                                                (error-handler t))))))
+      (oops/oset! "onreadystatechange" http-state-handler)
       (.open "GET" url true)
       (.send))))
 
