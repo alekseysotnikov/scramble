@@ -10,6 +10,13 @@ Check that a portion of the characters can be rearranged to match the sample
 
 ![](pic/scramble.png)
 
+## Docker
+```
+docker build -t scramble .
+docker run -p 3001:3001 scramble
+open http://localhost:3001
+```
+
 ## Setup
 
 To create a production build (uberjar) run:
